@@ -8,7 +8,7 @@ namespace BrickBreaker
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-
+        private Texture2D brickTexture;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -28,6 +28,9 @@ namespace BrickBreaker
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+
+            brickTexture = new Texture2D(GraphicsDevice, 1, 1);
+            brickTexture.SetData(new Color[] { Color.White });
         }
 
         protected override void Update(GameTime gameTime)
@@ -47,6 +50,9 @@ namespace BrickBreaker
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
+            _spriteBatch.Begin();
+            _spriteBatch.Draw(brickTexture, new Rectangle(50, 50, 100, 25), Color.Red);
+            _spriteBatch.End();
         }
     }
 }
