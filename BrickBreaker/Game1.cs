@@ -62,7 +62,7 @@ namespace BrickBreaker
 
             base.Draw(gameTime);
             _spriteBatch.Begin();
-
+            _spriteBatch.Draw(brickTexture, new Rectangle(50, 70, 75, 25), Color.Red);
             _spriteBatch.Draw(brickTexture, new Rectangle(130, 70, 75, 25), Color.Red);
             _spriteBatch.Draw(brickTexture, new Rectangle(210, 70, 75, 25), Color.Red);
             _spriteBatch.Draw(brickTexture, new Rectangle(290, 70, 75, 25), Color.Red);
