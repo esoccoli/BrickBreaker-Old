@@ -11,6 +11,10 @@ using System.Threading.Tasks;
 
 namespace BrickBreaker
 {
+    /// <summary>
+    /// The ball that move on the screen and breaks bricks
+    /// Manages the hitbox, color, and velocity
+    /// </summary>
     internal class Ball
     {
         private Rectangle hitbox;
