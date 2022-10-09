@@ -24,11 +24,33 @@ namespace BrickBreaker
         private Color color;
         private Vector2 velocity;
 
-        public Ball(Rectangle hitbox, Color color)
+        /// <summary>
+        /// Creates a ball of given size, position, and color tint
+        /// </summary>
+        /// <param name="xPos">x-coordinate of top left corner</param>
+        /// <param name="yPos">y-coordinate of top left corner</param>
+        /// <param name="radius">Radius of ball</param>
+        /// <param name="color">Tint color of ball</param>
+        public Ball(int xPos, int yPos, int radius, Color color)
         {
-            this.hitbox = hitbox;
+            this.xPos = xPos;
+            this.yPos = yPos;
+            this.radius = radius;
             this.color = color;
-            // velocity = 0
+            this.velocity = new Vector2(0,0);
+
+            hitbox = new Rectangle(xPos, yPos, radius * 2, radius * 2);
         }
+
+        /// <summary>
+        /// Retrieves the hitbox of the ball
+        /// </summary>
+        /// <returns>Hitbix of the ball</returns>
+        public Rectangle GetHitbox()
+        {
+            return hitbox;
+        }
+
+
     }
 }

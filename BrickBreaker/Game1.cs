@@ -12,8 +12,10 @@ namespace BrickBreaker
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        private Texture2D brickTexture;
+        private Rectangle brickTexture;
+        private Texture2D ballTexture;
         private int xPos, yPos, width, height;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -40,10 +42,10 @@ namespace BrickBreaker
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            ballTexture = this.Content.Load<Texture2D>("bouncy");
             // TODO: use this.Content to load your game content here
 
-            brickTexture = new Texture2D(GraphicsDevice, 75, 25);
+            brickTexture = new Rectangle(xPos, yPos, width, height);
             //brickTexture.SetData(new Color[] { Color.White });
         }
 
@@ -63,9 +65,8 @@ namespace BrickBreaker
 
             // TODO: Add your drawing code here
 
-            base.Draw(gameTime);
             Brick[,] brickList = new Brick[15, 4]; // Creates array of bricks
-
+            
             
             for (int row = 0; row < 15; row++)
             {
@@ -79,6 +80,7 @@ namespace BrickBreaker
             
             _spriteBatch.Begin();
 
+            _spriteBatch.Draw(ballTexture, new Vector2(200, 800), Color.White);
             // 15 rows and 4 columns of bricks
             // Each brick is 75 wide, 25 high
             // First brick has top left corner at (50, 70)
@@ -86,6 +88,8 @@ namespace BrickBreaker
             // y-coordinate is 30 more than previous brick in column
             
             _spriteBatch.End();
+
+            base.Draw(gameTime);
         }
     }
 }
