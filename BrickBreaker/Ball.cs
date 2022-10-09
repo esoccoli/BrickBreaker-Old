@@ -17,6 +17,9 @@ namespace BrickBreaker
     /// </summary>
     internal class Ball
     {
+        private int xPos;
+        private int yPos;
+        private int radius;
         private Rectangle hitbox;
         private Color color;
         private Vector2 velocity;
