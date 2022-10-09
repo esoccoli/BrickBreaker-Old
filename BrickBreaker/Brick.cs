@@ -109,42 +109,6 @@ namespace BrickBreaker
         // ============================= METHODS =============================
 
         /// <summary>
-        /// Retreives the x-coordinate of the top left corner
-        /// </summary>
-        /// <returns>x-coordinate of the brick</returns>
-        public int GetX()
-        {
-            return xPos;
-        }
-
-        /// <summary>
-        /// Retrieves the y-coordinate of the top left corner
-        /// </summary>
-        /// <returns>y-coordinate of the brick</returns>
-        public int GetY()
-        {
-            return yPos;
-        }
-
-        /// <summary>
-        /// Retrieves the width of the brick
-        /// </summary>
-        /// <returns>Width of the brick</returns>
-        public int GetWidth()
-        {
-            return width;
-        }
-
-        /// <summary>
-        /// Retrieves the height of the brick
-        /// </summary>
-        /// <returns>Height of the brick</returns>
-        public int GetHeight()
-        {
-            return height;
-        }
-
-        /// <summary>
         /// Retrieves the hitbox of the brick
         /// </summary>
         /// <returns>Hitbox of the brick</returns>
@@ -173,7 +137,9 @@ namespace BrickBreaker
 
         public void UpdateBrick(Rectangle BallPos)
         {
-            
+            // Check if ball collided with brick
+            // If yes, set isBroken to true
+            // Otherwise, do nothing
         }
     }
 }
