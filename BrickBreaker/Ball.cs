@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,5 +16,12 @@ namespace BrickBreaker
         private Rectangle hitbox;
         private Color color;
         private Vector2 velocity;
+
+        public Ball(Rectangle hitbox, Color color)
+        {
+            this.hitbox = hitbox;
+            this.color = color;
+            // velocity = 0
+        }
     }
 }

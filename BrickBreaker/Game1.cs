@@ -1,6 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
+using System.Diagnostics;
 using System.Runtime.ExceptionServices;
 
 namespace BrickBreaker
@@ -40,8 +43,8 @@ namespace BrickBreaker
 
             // TODO: use this.Content to load your game content here
 
-            brickTexture = new Texture2D(GraphicsDevice, 1, 1);
-            brickTexture.SetData(new Color[] { Color.White });
+            brickTexture = new Texture2D(GraphicsDevice, 75, 25);
+            //brickTexture.SetData(new Color[] { Color.White });
         }
 
         protected override void Update(GameTime gameTime)
@@ -61,11 +64,27 @@ namespace BrickBreaker
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
+            Brick[,] brickList = new Brick[15, 4]; // Creates array of bricks
+
+            
+            for (int row = 0; row < 15; row++)
+            {
+                for (int col = 0; col < 4; col++)
+                {
+                    brickList[row, col] = new Brick(xPos, yPos, width, height, Color.DarkGreen);
+                    xPos += 80;
+                }
+                yPos += 30;
+            }
+            
             _spriteBatch.Begin();
-            _spriteBatch.Draw(brickTexture, new Rectangle(50, 70, 75, 25), Color.Red);
-            _spriteBatch.Draw(brickTexture, new Rectangle(130, 70, 75, 25), Color.Red);
-            _spriteBatch.Draw(brickTexture, new Rectangle(210, 70, 75, 25), Color.Red);
-            _spriteBatch.Draw(brickTexture, new Rectangle(290, 70, 75, 25), Color.Red);
+
+            // 15 rows and 4 columns of bricks
+            // Each brick is 75 wide, 25 high
+            // First brick has top left corner at (50, 70)
+            // x-coordinate is 80 more than previous brick in row
+            // y-coordinate is 30 more than previous brick in column
+            
             _spriteBatch.End();
         }
     }
