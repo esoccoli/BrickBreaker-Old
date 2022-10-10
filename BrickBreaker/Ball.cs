@@ -17,8 +17,8 @@ namespace BrickBreaker
     /// </summary>
     internal class Ball
     {
-        private int xPos;
-        private int yPos;
+        private float xPos;
+        private float yPos;
         private int radius;
         private Rectangle hitbox;
         private Color color;
@@ -51,6 +51,19 @@ namespace BrickBreaker
             return hitbox;
         }
 
+        public void Move()
+        {
+            velocity.X += 10f;
+            velocity.Y += 10f;
+            xPos += velocity.X;
+            yPos += velocity.Y;
+            return;
+        }
+        
+        public void UpdatePos()
+        {
+
+        }
 
     }
 }

@@ -109,6 +109,23 @@ namespace BrickBreaker
         // ============================= METHODS =============================
 
         /// <summary>
+        /// Retrieves the x-coordinate of the top left corner
+        /// </summary>
+        /// <returns>Returns the x-coordinate of the brick</returns>
+        public int GetX()
+        {
+            return xPos;
+        }
+
+        /// <summary>
+        /// Retrieves the y-coordinate of the top left corner
+        /// </summary>
+        /// <returns>y-coordinate of the brick</returns>
+        public int GetY()
+        {
+            return yPos;
+        }
+        /// <summary>
         /// Retrieves the hitbox of the brick
         /// </summary>
         /// <returns>Hitbox of the brick</returns>
